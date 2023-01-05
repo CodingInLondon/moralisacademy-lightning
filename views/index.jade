@@ -1,0 +1,29 @@
+h1 Welcome to my store!
+p here we don't sell anything for real because this is just a test site 
+
+
+p=message
+div 
+    h2 Submit payment
+    form(method='post', action='/invoice')
+        p 
+            label Customer information
+        p
+            label email 
+            input(type='text', name='email')
+        p
+            label name 
+            input(type='text', name='custname')
+        p
+            label address 
+            input(type='text', name='address')
+        p  
+            label purchase options 
+        p
+            input(type='radio', name='product', value='0.1') 
+            label carrot 0.1 BTC
+        p
+            input(type='radio', name='product', value='0.2') 
+            label kiwi 0.2 BTC
+        p  
+            input(type='submit', name='submit')
