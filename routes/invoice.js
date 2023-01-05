@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const BTCPAY_PRIV_KEY = "4df8e0f77ff262fee5eb436ca0c9b0dac21581ea2ed71925dbd2b9f75e76b545";
-const BTCPAY_MERCHANT_KEY = "2iaAU2ZpYFoBXVE67mjN9eEC7ueEEoZ2hu3zZvKspuUT";
+
+const BTCPAY_PRIV_KEY = process.env.BTCPAY_PRIV_KEY;
+const BTCPAY_MERCHANT_KEY = process.env.BTCPAY_MERCHANT_KEY;
+
 
 // Initialize the client
 const btcpay = require('btcpay')
