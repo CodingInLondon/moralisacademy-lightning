@@ -16,12 +16,13 @@ router.get('/:id', async function(req, res, next) {
     var invoiceId = req.params.id;
     client.get_invoice(invoiceId)
         .then(invoice => {
+            console.log(invoice)
+
             if ((invoice.status == "complete" ) || (invoice.status == "paid)")){
-                res.end("<html>thankz</html>");
-            
+                res.end("<html><p>The invoice to " + invoice.buyer.name + " was paid</p><p>email: " + invoice.buyer.email + "</p><p>address: "+invoice.buyer.address1 +"</p></html>");
             }
             else
-                res.end("<html>Not paid</html>");
+                res.end("<html><p>The invoice to " + invoice.buyer.name + " was not paid</p><p>email: " + invoice.buyer.email + "</p><p>address: "+invoice.buyer.address1 +"</p></html>");
 
         }).catch(error =>{console.log(error);})
 
@@ -30,11 +31,12 @@ router.get('/:id', async function(req, res, next) {
 /* Create invoice. */
 router.post('/', function(req, res, next) {
     var dollarAmount = req.body.product;
-    console.log('Amount: ' + dollarAmount);
+    var buyerEmail = req.body.email;
+    var buyerName = req.body.custname;
+    var buyerAddress = req.body.address;
 
-    client.create_invoice({price: dollarAmount, currency: "USD"})
+    client.create_invoice({price: dollarAmount, currency: "USD", buyer: {email: buyerEmail, name: buyerName, address1: buyerAddress}})
     .then(invoice => {
-        console.log(invoice);
         res.render("invoice", {invoiceId: invoice.id});
     })
     .catch(err => {console.log(err)});

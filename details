@@ -1,9 +1,21 @@
 
-Node info:
+Filip Node info:
 035be98895c4d4e3b91fbb88d27af0fa68de6023e3a6eae675cc8332d29f299af4@18.209.171.172:9735
 
 
-Bolt11 invoice:
-lnbc6050n1p3cx6z7pp5dxvnft5wc6dnv9c8mtn5smdvs3lwyj0v9zay2qtvglzjukvzspcsdps2pskjepqw3hjq4r9wd69xar0wfjjq2z0wfjx2u3qf9zr5gpfxqzurcqpjsp5g7pnerxtlln4ygy6u7ptuetfaezu2ey8s6y7fc9df40gkr2md7rs9qyyssqctdm4sxe8dxelqrwmfww5392a0e2k9qxdm6njdvt8w8wfu32qm243w4yhhn0fvcvm8a4z2f5mp2kcfsm5909cldhd4nm0zwlnyn20espc6nm84
+
+node -p "require('btcpay').crypto.generate_keypair().getPrivate('hex')"
+
+
+
+https://lightning.filipmartinsson.com
+
+
+
+
+
+
+
+
 
 
