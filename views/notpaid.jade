@@ -1,15 +1,61 @@
-h2 Hi, the payment did not go through
-p Dear 
-    =buyer.name  
+link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+link(rel='stylesheet', href='/stylesheets/style.css')
 
-p The invoice for an amount of 
-p=currency 
-    =price 
-p did not go through and you were not charged.
 
-h2 Customer details
-p Address: 
-    =buyer.address1 
-p Email: 
-    =buyer.email
+body(class="bg-light")
+
+    div(class="container")
+
+        main
+
+            div(class="py-5 text-center")
+
+                <img class="d-block mx-auto mb-4" src="/assets/smallcarrots.png" alt="" >
+
+                h2 You were not charged 
+
+                p(class="lead") Dear 
+                    =buyer.name  
+                    , sorry the payment did not go through 
+
+
+            div(class="row g-5") 
+
+                div(class="col-md-7 col-lg-8")
+
+                    p The invoice for an amount of 
+                    p=currency 
+                        =price 
+                    p was not paid.
+
+                    hr(class="my-4")  
+
+                    h4(class="mb-3") Customer details
+
+                    p
+                        label(class="form-label") Name: 
+                            =buyer.name 
+                    p
+                        label(class="form-label") Email: 
+                            =buyer.email
+                    p
+                        label(class="form-label") Address: 
+                            =buyer.address1
+                    p 
+
+                    hr(class="my-4") 
+
+                form(method='get', action='/')
+                    input(class="w-100 btn btn-primary btn-lg" type='submit', name='submit' value="Return to the store")
+
+
+        footer(class="my-5 pt-5 text-muted text-center text-small")
+            p(class="mb-1") © 2023 Freshly Fruits Inc
+            ul(class="list-inline")
+                li(class="list-inline-item")
+                    a(href="#") Privacy 
+                    a(href="#") Terms 
+                    a(href="#") Support 
+
+
 

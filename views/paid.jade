@@ -1,16 +1,72 @@
-h1 Thanks for paying
+link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+link(rel='stylesheet', href='/stylesheets/style.css')
 
-h2 Invoice
-p Amount:  
-    =currency 
-    =price 
-p Fully paid.
 
-h2 Customer details
-p Name: 
-    =buyer.name 
-p Address: 
-    =buyer.address1 
-p Email: 
-    =buyer.email
+body(class="bg-light")
+
+    div(class="container")
+
+        main
+
+            div(class="py-5 text-center")
+
+                <img class="d-block mx-auto mb-4" src="/assets/smallcarrots.png" alt="" >
+
+                h2 Thanks for paying 
+
+                p(class="lead") Dear 
+                    =buyer.name  
+                    , please find your invoice below
+
+
+            div(class="row g-5") 
+
+                div(class="col-md-5 col-lg-4 order-md-last")
+
+                    h4(class="d-flex justify-content-between align-items-center mb-3")
+                        span(class="text-primary") Invoice
+
+
+                    ul(class="list-group mb-3")
+                        li(class="list-group-item d-flex justify-content-between lh-sm")
+                            div
+                                h6(class="my-0") Item purchased 
+                                small(class="text-muted") fully paid 
+                            span(class="text-muted")=currency
+                                                        =price
+                        li(class="list-group-item d-flex justify-content-between")
+                            span Total                                
+                            strong=currency
+                                =price
+
+
+                div(class="col-md-7 col-lg-8")
+
+                    h4(class="mb-3") Customer details
+
+                    p
+                        label(class="form-label") Name: 
+                            =buyer.name 
+                    p
+                        label(class="form-label") Email: 
+                            =buyer.email
+                    p
+                        label(class="form-label") Address: 
+                            =buyer.address1
+                    p 
+
+                    hr(class="my-4") 
+
+            form(method='get', action='/')
+                input(class="w-100 btn btn-primary btn-lg" type='submit', name='submit' value="Return to the store")
+
+
+        footer(class="my-5 pt-5 text-muted text-center text-small")
+            p(class="mb-1") © 2023 Freshly Fruits Inc
+            ul(class="list-inline")
+                li(class="list-inline-item")
+                    a(href="#") Privacy 
+                    a(href="#") Terms 
+                    a(href="#") Support 
+
 

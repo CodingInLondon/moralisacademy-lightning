@@ -1,3 +1,7 @@
+link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+link(rel='stylesheet', href='/stylesheets/style.css')
+
+
 script(src="https://lightning.filipmartinsson.com/modal/btcpay.js")
 
 script(type='text/javascript').
@@ -11,4 +15,28 @@ script(type='text/javascript').
         })
     }
 
-h1 invoice 
+
+body(class="bg-light")
+
+    div(class="container")
+
+        main
+
+            div(class="py-5 text-center")
+
+                <img class="d-block mx-auto mb-4" src="/assets/smallcarrots.png" alt="" >
+
+                h2 Freshy Fruits
+                p(class="lead") Payment 
+
+
+        footer(class="my-5 pt-5 text-muted text-center text-small")
+            p(class="mb-1") © 2023 Freshly Fruits Inc
+            ul(class="list-inline")
+                li(class="list-inline-item")
+                    a(href="#") Privacy 
+                    a(href="#") Terms 
+                    a(href="#") Support 
+
+
+
