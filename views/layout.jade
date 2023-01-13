@@ -2,7 +2,17 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block scripts
+
+  //- body(class="bg-light")
   body
     block content
+    footer(class="my-5 pt-5 text-muted text-center text-small")
+        p(class="mb-1") © 2023 Freshly Fruits Inc
+        ul(class="list-inline")
+            li(class="list-inline-item")
+                a(href="#") Privacy 
+                a(href="#") Terms 
+                a(href="#") Support 

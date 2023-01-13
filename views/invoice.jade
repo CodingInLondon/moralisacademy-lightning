@@ -1,22 +1,21 @@
-link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-link(rel='stylesheet', href='/stylesheets/style.css')
+extends ./layout
 
+block scripts
 
-script(src="https://lightning.filipmartinsson.com/modal/btcpay.js")
+    script(src="https://lightning.filipmartinsson.com/modal/btcpay.js")
 
-script(type='text/javascript').
-    window.onload = () => {
-        var id = "#{invoiceId}"
-        window.btcpay.showInvoice(id);
+    script(type='text/javascript').
+        window.onload = () => {
+            var id = "#{invoiceId}"
+            window.btcpay.showInvoice(id);
 
-        //Payment window closed
-        window.btcpay.onModalWillLeave(()=> {
-            window.location.href = "invoice/" +id;
-        })
-    }
+            //Payment window closed
+            window.btcpay.onModalWillLeave(()=> {
+                window.location.href = "invoice/" +id;
+            })
+        }
 
-
-body(class="bg-light")
+block content
 
     div(class="container")
 
@@ -30,13 +29,6 @@ body(class="bg-light")
                 p(class="lead") Payment 
 
 
-        footer(class="my-5 pt-5 text-muted text-center text-small")
-            p(class="mb-1") © 2023 Freshly Fruits Inc
-            ul(class="list-inline")
-                li(class="list-inline-item")
-                    a(href="#") Privacy 
-                    a(href="#") Terms 
-                    a(href="#") Support 
 
 
 

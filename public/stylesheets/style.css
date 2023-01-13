@@ -1,3 +1,12 @@
+body{
+  background-color: rgb(248, 249, 250);
+}
+
+div{
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+}
+
 .container {
   max-width: 960px;
 }
